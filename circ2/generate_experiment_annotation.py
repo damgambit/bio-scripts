@@ -1,27 +1,26 @@
 import os
 import sys
 
-EXPERIMENT = sys.argv[1]
-REF = sys.argv[1]
-GENOME = sys.argv[1]
-GTF = sys.argv[1]
-THREADS = sys.argv[1]
-OUT = sys.argv[1]
+EXPERIMENT = sys.argv[1] # PRJNA347654
+THREADS = sys.argv[2]
+PE = sys.argv[3]
 
-
-samples = os.listdir("/g100_scratch/userexternal/dgambitt/ASD/MM/" + EXPERIMENT)
-samples = set([s.split('.')[0] for s in samples])
+if PE == "PE":
+  samples = os.listdir("/g100_scratch/userexternal/dgambitt/PE/ASD/MM/" + EXPERIMENT)
+else:
+  samples = os.listdir("/g100_scratch/userexternal/dgambitt/ASD/MM/" + EXPERIMENT)
+samples = set([s.split('.')[0].replace('_1', '').replace('_2', '') for s in samples])
 
 print(samples)
 
 print("#!/bin/bash")
 
 for sample in samples:
-    run = "sbatch --export=SAMPLE={},REF={},GENOME={},GTF={},THREADS={},OUT={}".format(
-              sample,REF,GENOME,GTF,THREADS,OUT)
-    run += " --job_name={}_annotation --output={}.out --error={}.err".format(
-      sample, sample, sample
+    run = "sbatch --export=ALL,SAMPLE={}/{},THREADS={},OUT={}".format(
+              EXPERIMENT, sample, THREADS, sample)
+    run += " --job-name={}_c2 --output=out/{}.out --error=err/{}.err".format(
+      sample[-3:], sample, sample
     )
-    run += "annotate.sh"
+    run += " ~/bio-scripts/circ2/run_pipeline_from_bwa.sh"
     print(run)
 
