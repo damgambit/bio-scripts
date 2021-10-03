@@ -60,3 +60,5 @@ CIRCexplorer2 denovo \
   -d $SCRATCH/CIRCexplorer2Results/ASD/MM/$SAMPLE/assemble \
   -m $SCRATCH/TopHatResults/ASD/MM/$SAMPLE/tophat \
   -o $SCRATCH/CIRCexplorer2Results/ASD/MM/$SAMPLE/denovo
+  > $SCRATCH/CIRCexplorer2Results/ASD/MM/$SAMPLE/CIRCexplorer2_denovo.log
+
