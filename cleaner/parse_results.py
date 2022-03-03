@@ -1,7 +1,8 @@
 import os
 import pandas as pd
 
-INPUT = '/g100_scratch/userexternal/dgambitt/CIRCexplorer2Results/ASD/MM/'
+# Change RTT/HSA/ as needed
+INPUT = '/g100_scratch/userexternal/dgambitt/CIRCexplorer2Results/RTT/HSA/'
 KNOWN = 'circularRNA_known.txt'
 
 
@@ -26,11 +27,11 @@ for proj in projects:
         "isoformName", "index", "flankIntron",
         ])
       try:
-        os.system('mkdir -p results/ASD/MM/{}/{}/'.format(proj, run))
+        os.system('mkdir -p results/RTT/HSA/{}/{}/'.format(proj, run))
       except:
         pass
       df.to_csv(
-        'results/ASD/MM/{}/{}/knownCirc.csv'.format(proj, run), index=False)
+        'results/RTT/HSA/{}/{}/knownCirc.csv'.format(proj, run), index=False)
 
 
 

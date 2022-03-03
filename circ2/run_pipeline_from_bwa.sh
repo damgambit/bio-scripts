@@ -34,31 +34,31 @@ conda activate py36
 mkdir -p $SCRATCH/CIRCexplorer2Results/ASD/MM/$SAMPLE
 
 
-# CIRCexplorer2 parse -t BWA \
-#   $SCRATCH/bwa/ASD/MM/$SAMPLE/bwa_mem_alignments.sam \
-#   -b $SCRATCH/CIRCexplorer2Results/ASD/MM/$SAMPLE/back_spliced_junction.bed \
-#   > $SCRATCH/CIRCexplorer2Results/ASD/MM/$SAMPLE/CIRCexplorer2_parse.log
+CIRCexplorer2 parse -t BWA \
+  $SCRATCH/bwa/ASD/MM/$SAMPLE/bwa_mem_alignments.sam \
+  -b $SCRATCH/CIRCexplorer2Results/ASD/MM/$SAMPLE/back_spliced_junction.bed \
+  > $SCRATCH/CIRCexplorer2Results/ASD/MM/$SAMPLE/CIRCexplorer2_parse.log
 
 
-# CIRCexplorer2 annotate \
-#   -r $SCRATCH/GENOMES/mm10/refFlat.txt \
-#   -g $IGENOME_UCSC_MUS_MUSCULUS_GENOME/genome.fa \
-#   -b $SCRATCH/CIRCexplorer2Results/ASD/MM/$SAMPLE/back_spliced_junction.bed \
-#   -o $SCRATCH/CIRCexplorer2Results/ASD/MM/$SAMPLE/circularRNA_known.txt \
-#   > $SCRATCH/CIRCexplorer2Results/ASD/MM/$SAMPLE/CIRCexplorer2_annotate.log
-
-CIRCexplorer2 assemble \
-  -r $SCRATCH/GENOMES/mm10/refFlat.txt \
-  -m $SCRATCH/TopHatResults/ASD/MM/$SAMPLE/tophat \
-  -o $SCRATCH/CIRCexplorer2Results/ASD/MM/$SAMPLE/assemble \
-  > $SCRATCH/CIRCexplorer2Results/ASD/MM/$SAMPLE/CIRCexplorer2_assemble.log
-
-CIRCexplorer2 denovo \
+CIRCexplorer2 annotate \
   -r $SCRATCH/GENOMES/mm10/refFlat.txt \
   -g $IGENOME_UCSC_MUS_MUSCULUS_GENOME/genome.fa \
   -b $SCRATCH/CIRCexplorer2Results/ASD/MM/$SAMPLE/back_spliced_junction.bed \
-  -d $SCRATCH/CIRCexplorer2Results/ASD/MM/$SAMPLE/assemble \
-  -m $SCRATCH/TopHatResults/ASD/MM/$SAMPLE/tophat \
-  -o $SCRATCH/CIRCexplorer2Results/ASD/MM/$SAMPLE/denovo
-  > $SCRATCH/CIRCexplorer2Results/ASD/MM/$SAMPLE/CIRCexplorer2_denovo.log
+  -o $SCRATCH/CIRCexplorer2Results/ASD/MM/$SAMPLE/circularRNA_known.txt \
+  > $SCRATCH/CIRCexplorer2Results/ASD/MM/$SAMPLE/CIRCexplorer2_annotate.log
+
+# CIRCexplorer2 assemble \
+#   -r $SCRATCH/GENOMES/mm10/refFlat.txt \
+#   -m $SCRATCH/TopHatResults/ASD/MM/$SAMPLE/tophat \
+#   -o $SCRATCH/CIRCexplorer2Results/ASD/MM/$SAMPLE/assemble \
+#   > $SCRATCH/CIRCexplorer2Results/ASD/MM/$SAMPLE/CIRCexplorer2_assemble.log
+
+# CIRCexplorer2 denovo \
+#   -r $SCRATCH/GENOMES/mm10/refFlat.txt \
+#   -g $IGENOME_UCSC_MUS_MUSCULUS_GENOME/genome.fa \
+#   -b $SCRATCH/CIRCexplorer2Results/ASD/MM/$SAMPLE/back_spliced_junction.bed \
+#   -d $SCRATCH/CIRCexplorer2Results/ASD/MM/$SAMPLE/assemble \
+#   -m $SCRATCH/TopHatResults/ASD/MM/$SAMPLE/tophat \
+#   -o $SCRATCH/CIRCexplorer2Results/ASD/MM/$SAMPLE/denovo
+#   > $SCRATCH/CIRCexplorer2Results/ASD/MM/$SAMPLE/CIRCexplorer2_denovo.log
 

@@ -1,0 +1,9 @@
+python generate_experiment_annotation.py  PRJNA419983 48 PE RTT HSA
+python generate_experiment_annotation.py  PRJNA482371 48 PE RTT HSA
+python generate_experiment_annotation.py  PRJNA482372 48 PE RTT HSA
+python generate_experiment_annotation.py  PRJNA509687 48 PE RTT HSA
+python generate_experiment_annotation.py  PRJNA590731 48 PE RTT HSA
+python generate_experiment_annotation.py  PRJNA672095 48 PE RTT HSA
+python generate_experiment_annotation.py  PRJNA224073 48 SE RTT HSA
+python generate_experiment_annotation.py  PRJNA383878 48 SE RTT HSA
+python generate_experiment_annotation.py  PRJNA527289 48 SE RTT HSA

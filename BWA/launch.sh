@@ -1,0 +1,6 @@
+sbatch --export=ALL,SAMPLE=PRJNA419983/SRR6325554,RUN=SRR6325554,THREADS=48,OUT=SRR6325554 --job-name=554_bwa --output=out/SRR6325554.out --error=err/SRR6325554.err ~/bio-scripts/BWA/bwa_mem_hsa_pe.sh
+sbatch --export=ALL,SAMPLE=PRJNA419983/SRR6325557,RUN=SRR6325557,THREADS=48,OUT=SRR6325557 --job-name=557_bwa --output=out/SRR6325557.out --error=err/SRR6325557.err ~/bio-scripts/BWA/bwa_mem_hsa_pe.sh
+sbatch --export=ALL,SAMPLE=PRJNA482371/SRR7551746,RUN=SRR7551746,THREADS=48,OUT=SRR7551746 --job-name=746_bwa --output=out/SRR7551746.out --error=err/SRR7551746.err ~/bio-scripts/BWA/bwa_mem_hsa_pe.sh
+sbatch --export=ALL,SAMPLE=PRJNA482371/SRR7551743,RUN=SRR7551743,THREADS=48,OUT=SRR7551743 --job-name=743_bwa --output=out/SRR7551743.out --error=err/SRR7551743.err ~/bio-scripts/BWA/bwa_mem_hsa_pe.sh
+sbatch --export=ALL,SAMPLE=PRJNA482371/SRR7551747,RUN=SRR7551747,THREADS=48,OUT=SRR7551747 --job-name=747_bwa --output=out/SRR7551747.out --error=err/SRR7551747.err ~/bio-scripts/BWA/bwa_mem_hsa_pe.sh
+sbatch --export=ALL,SAMPLE=PRJNA482371/SRR7551742,RUN=SRR7551742,THREADS=48,OUT=SRR7551742 --job-name=742_bwa --output=out/SRR7551742.out --error=err/SRR7551742.err ~/bio-scripts/BWA/bwa_mem_hsa_pe.sh

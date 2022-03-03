@@ -1,0 +1,9 @@
+python generate_alignment_job.py  PRJNA419983 48 PE RTT HSA
+python generate_alignment_job.py  PRJNA482371 48 PE RTT HSA
+python generate_alignment_job.py  PRJNA482372 48 PE RTT HSA
+python generate_alignment_job.py  PRJNA509687 48 PE RTT HSA
+python generate_alignment_job.py  PRJNA590731 48 PE RTT HSA
+python generate_alignment_job.py  PRJNA672095 48 PE RTT HSA
+python generate_alignment_job.py  PRJNA224073 48 SE RTT HSA
+python generate_alignment_job.py  PRJNA383878 48 SE RTT HSA
+python generate_alignment_job.py  PRJNA527289 48 SE RTT HSA

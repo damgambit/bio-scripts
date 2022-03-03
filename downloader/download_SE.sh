@@ -2,7 +2,7 @@
 
 #SBATCH -N 1
 #SBATCH -n 1
-#SBATCH -p g100_usr_prod
+#SBATCH -p g100_all_serial
 #SBATCH --mem=2GB
 #SBATCH --time 04:00:00
 #SBATCH --account ELIX4_castrign2
